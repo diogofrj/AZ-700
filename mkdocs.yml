@@ -1,0 +1,63 @@
+site_name: AZ-700 Study Guide
+
+nav:
+    - Skills Measured: 'index.md'
+    - 'Hybrid Networking':
+        - 'S2S VPN connection':
+          - 'vpn/s2s.md'
+        - 'P2S VPN connection':
+          - 'vpn/p2s.md'
+        - 'Express Route':
+          - 'vpn/exp-route.md'       
+    - 'Core Networking':
+        - 'Private IP for VNets':
+          - 'core/vnet.md'
+        - 'Name Resolution':
+          - 'core/naming.md'
+        - 'Virtual WAN':
+          - 'core/vwan.md'  
+    - 'Routing':
+        - 'VNet Routing':
+          - 'routing/vnet.md'
+        - 'Load Balancers':
+          - 'routing/naming.md'
+        - 'Application Gateway':
+          - 'routing/vwan.md'    
+        - 'Front Door':
+          - 'routing/fd.md'     
+        - 'Traffic Manager':
+          - 'routing/tfmanager.md'      
+        - 'Virtual Network NAT':
+          - 'routing/vnat.md'                                       
+    - 'Secure Networks':
+       - 'Azure Firewall':
+          - 'secmon/fw.md'
+       - 'NSG':
+          - 'secmon/nsg.md'
+       - 'WAF':
+          - 'secmon/waf.md'  
+    - 'Monitor Networks':
+       - 'secmon/mon.md'
+    - 'Core Networking':
+        - 'Private Endpoint':
+          - 'privend/privend.md'
+        - 'Service Endpoint':
+          - 'privend/servend.md'
+        - 'VNet integration PaaS':
+          - 'privend/vnetintpaas.md'        
+    - About: 'about.md'
+theme:
+    name: rtd-dropdown
+    collapse_by_default: true
+    include_homepage_in_sidebar: false
+    highlightjs: true
+    hijs_languages:
+        - python
+        - yaml
+        - json
+        - powershell
+        - azurecli
+markdown_extensions:
+    - toc:
+        permalink: True
+        separator: "_"
