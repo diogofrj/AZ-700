@@ -1,6 +1,7 @@
 # Skills Measured
-Download [Skills Outline](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4PaHw).<br>
-Thomas [Study Guide](https://www.thomasmaurer.ch/2021/06/az-700-study-guide-microsoft-azure-networking-solutions/).
+[Skills Outline](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4PaHw)<br>
+[Study Guide](https://www.thomasmaurer.ch/2021/06/az-700-study-guide-microsoft-azure-networking-solutions/)<br>
+[LAB Guide](https://microsoftlearning.github.io/AZ-700-Designing-and-Implementing-Microsoft-Azure-Networking-Solutions/) 
 
 ## Hybrid Networking (10–15%)
 ### Design, implement, and manage a site-to-site VPN connection
