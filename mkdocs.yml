@@ -1,5 +1,6 @@
 site_name: AZ-700 Study Guide
-
+repo_url: https://github.com/diogofrj/AZ-700
+repo_name: diogofrj/AZ-700
 nav:
     - Skills Measured: 'index.md'
     - 'Hybrid Networking':
@@ -49,22 +50,114 @@ nav:
           - 'privend/vnetintpaas.md'        
     - About: 'about.md'
 theme:
-    name: material
-    collapse_by_default: true
+  logo: assets/azurelogo.png
+  favicon: assets/azurelogo.png
+  icon:
+    repo: fontawesome/brands/gitkraken
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  name: material
+  collapse_by_default: true
 # Necessary for search to work properly
-    include_search_page: false
-    search_index_only: true
-    include_homepage_in_sidebar: false
-    highlightjs: true
-    hijs_languages:
-        - python
-        - yaml
-        - json
-        - powershell
-        - azurecli
+  include_search_page: false
+  search_index_only: true
+  include_homepage_in_sidebar: false
+  highlightjs: true
+  hijs_languages:
+      - python
+      - yaml
+      - json
+      - powershell
+      - azurepowershell
+      - azurecli
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky    
+    - navigation.tracking
+    - navigation.instant
+    - navigation.sections
+    - navigation.expand
+    - search.highlight
+    - search.suggest
+    - search.share
+    - header.autohide
+    - content.tabs.link
+    - content.code.annotate
 markdown_extensions:
-    - toc:
-        permalink: True
-        separator: "_"
+  - pymdownx.highlight:
+      linenums: true
+      linenums_style: pymdownx-inline
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.keys
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+  - pymdownx.critic
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - attr_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.smartsymbols
+
+
+extra:
+  homepage: https://az700.z20.web.core.windows.net/
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/diogofernandesrj/
+    - icon: fontawesome/brands/github
+      link: https://github.com/diogofrj      
+
+      
 extra_javascript:
-  - javascript/tabhack.js
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js
+  - javascripts/config.js
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css
+
+copyright: Copyright &copy; 2021 - 2021 Diogo Fernandes
+#generator: false
+
+plugins:
+  - git-revision-date:
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
+      enable_creation_date: true
+  - search:
+      lang:
+        - en
+        - pt
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#linking-content-tabs
