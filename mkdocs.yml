@@ -11,24 +11,26 @@ nav:
           - 'vpn/exp-route.md'       
     - 'Core Networking':
         - 'Private IP for VNets':
-          - 'core/vnet.md'
+          - 'core/private-ip-vnet.md'
         - 'Name Resolution':
           - 'core/naming.md'
+        - 'cross-VNet connectivity':
+          - 'core/cross-vnet.md'          
         - 'Virtual WAN':
           - 'core/vwan.md'  
     - 'Routing':
         - 'VNet Routing':
-          - 'routing/vnet.md'
+          - 'routing/appgw.md'
         - 'Load Balancers':
-          - 'routing/naming.md'
+          - 'routing/fd.md'
         - 'Application Gateway':
-          - 'routing/vwan.md'    
+          - 'routing/lb.md'    
         - 'Front Door':
-          - 'routing/fd.md'     
+          - 'routing/tfmanager.md'     
         - 'Traffic Manager':
-          - 'routing/tfmanager.md'      
+          - 'routing/vnat.md'      
         - 'Virtual Network NAT':
-          - 'routing/vnat.md'                                       
+          - 'routing/vnetroute.md'                                       
     - 'Secure Networks':
        - 'Azure Firewall':
           - 'secmon/fw.md'
@@ -47,8 +49,11 @@ nav:
           - 'privend/vnetintpaas.md'        
     - About: 'about.md'
 theme:
-    name: rtd-dropdown
+    name: material
     collapse_by_default: true
+# Necessary for search to work properly
+    include_search_page: false
+    search_index_only: true
     include_homepage_in_sidebar: false
     highlightjs: true
     hijs_languages:
@@ -61,3 +66,5 @@ markdown_extensions:
     - toc:
         permalink: True
         separator: "_"
+extra_javascript:
+  - javascript/tabhack.js
