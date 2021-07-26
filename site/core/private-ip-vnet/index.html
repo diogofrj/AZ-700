@@ -642,26 +642,26 @@
     Design and implement private IP addressing for VNets
   </a>
   
-    <nav class="md-nav" aria-label="Design and implement private IP addressing for VNets">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-de-recursos" class="md-nav__link">
+    Tabela de Recursos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama" class="md-nav__link">
+    Diagrama
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrama">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#criar-vnet" class="md-nav__link">
-    Criar VNET
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#atualizar-vnet" class="md-nav__link">
-    Atualizar VNET
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remover-vnet" class="md-nav__link">
-    Remover VNET
+  <a href="#criacao-das-vnets-via-powershell" class="md-nav__link">
+    Criação das VNETs via Powershell
   </a>
   
 </li>
@@ -1483,26 +1483,26 @@
     Design and implement private IP addressing for VNets
   </a>
   
-    <nav class="md-nav" aria-label="Design and implement private IP addressing for VNets">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabela-de-recursos" class="md-nav__link">
+    Tabela de Recursos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama" class="md-nav__link">
+    Diagrama
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrama">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#criar-vnet" class="md-nav__link">
-    Criar VNET
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#atualizar-vnet" class="md-nav__link">
-    Atualizar VNET
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#remover-vnet" class="md-nav__link">
-    Remover VNET
+  <a href="#criacao-das-vnets-via-powershell" class="md-nav__link">
+    Criação das VNETs via Powershell
   </a>
   
 </li>
@@ -1532,59 +1532,225 @@
                 <h1 id="private-ip-addressing-for-vnets">Private IP addressing for VNets</h1>
 <h2 id="design-and-implement-private-ip-addressing-for-vnets">Design and implement private IP addressing for VNets</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> create a VNet</li>
+<li>[X ] create a VNet</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> plan and configure subnetting for services, including VNet gateways, private endpoints, 
 firewalls, application gateways, and VNet-integrated platform services</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> plan and configure subnet delegation</li>
 </ul>
-<h3 id="criar-vnet">Criar VNET</h3>
-<p><img alt="😄" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f604.svg" title=":smile:" /></p>
+<h2 id="tabela-de-recursos">Tabela de Recursos</h2>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>Virtual Network</strong></th>
+<th align="left"><strong>Region</strong></th>
+<th align="left"><strong>Address Space</strong></th>
+<th align="left"><strong>Subnet Name</strong></th>
+<th align="left"><strong>Subnet Address</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">vnet-core-us</td>
+<td align="left">EastUS</td>
+<td align="left">10.20.0.0/16</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">GatewaySubnet</td>
+<td align="left">10.20.0.0/27</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">SN-SharedServices</td>
+<td align="left">10.20.10.0/24</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">SN-Databases</td>
+<td align="left">10.20.20.0/24</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">SN-PublicWebService</td>
+<td align="left">10.20.30.0/24</td>
+</tr>
+<tr>
+<td align="left">vnet-fabric-west</td>
+<td align="left">WestUS</td>
+<td align="left">10.30.0.0/16</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">ManufacturingSystemSubnet</td>
+<td align="left">10.30.10.0/24</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">SensorSubnet1</td>
+<td align="left">10.30.20.0/24</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">SensorSubnet2</td>
+<td align="left">10.30.21.0/24</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">SensorSubnet3</td>
+<td align="left">10.30.22.0/24</td>
+</tr>
+<tr>
+<td align="left">vnet-dev-central</td>
+<td align="left">CentralUS</td>
+<td align="left">10.40.0.0/16</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">ResearchSystemSubnet</td>
+<td align="left">10.40.0.0/24</td>
+</tr>
+</tbody>
+</table>
+<h2 id="diagrama">Diagrama</h2>
+<p><img alt="Diagrama" src="../../img/design-implement-vnet-peering.png" /></p>
+<h3 id="criacao-das-vnets-via-powershell">Criação das VNETs via Powershell</h3>
 <hr />
-<p>Save space in your document using buttons or tabs for sub chapters. Add this code at the end of your title:</p>
-<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">PowerShell</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span># Crianção de RG
-<span class="linenos" data-linenos=" 2 "></span>$rg = @{
-<span class="linenos" data-linenos=" 3 "></span>    Name = &#39;RG-AZ700&#39;
-<span class="linenos" data-linenos=" 4 "></span>    Location = &#39;EastUS&#39;
-<span class="linenos" data-linenos=" 5 "></span>}
-<span class="linenos" data-linenos=" 6 "></span>New-AzResourceGroup @rg
-<span class="linenos" data-linenos=" 7 "></span>
-<span class="linenos" data-linenos=" 8 "></span># Crianção de vNET
-<span class="linenos" data-linenos=" 9 "></span>$vnet = @{
-<span class="linenos" data-linenos="10 "></span>    Name = &#39;VNET-700&#39;
-<span class="linenos" data-linenos="11 "></span>    ResourceGroupName = $rg
-<span class="linenos" data-linenos="12 "></span>    Location = &#39;EastUS&#39;
-<span class="linenos" data-linenos="13 "></span>    AddressPrefix = &#39;10.0.0.0/16&#39;    
-<span class="linenos" data-linenos="14 "></span>}
-<span class="linenos" data-linenos="15 "></span>$virtualNetwork = New-AzVirtualNetwork @vnet
-<span class="linenos" data-linenos="16 "></span>
-<span class="linenos" data-linenos="17 "></span># Crianção de Subnet
-<span class="linenos" data-linenos="18 "></span>$subnet = @{
-<span class="linenos" data-linenos="19 "></span>    Name = &#39;SNET-700&#39;
-<span class="linenos" data-linenos="20 "></span>    VirtualNetwork = $virtualNetwork
-<span class="linenos" data-linenos="21 "></span>    AddressPrefix = &#39;10.0.0.0/24&#39;
-<span class="linenos" data-linenos="22 "></span>}
-<span class="linenos" data-linenos="23 "></span>$subnetConfig = Add-AzVirtualNetworkSubnetConfig @subnet
-<span class="linenos" data-linenos="24 "></span>
-<span class="linenos" data-linenos="25 "></span># Associar subnet a vNet
-<span class="linenos" data-linenos="26 "></span>$virtualNetwork | Set-AzVirtualNetwork
+<p>Script powershell para criação do cenario proposto:</p>
+<ul>
+<li>Vamos criar apenas um Resource Group para facilitar a vizualização dos recursos criados </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="c"># Crianção de RG</span>
+<span class="linenos" data-linenos="2 "></span><span class="nv">$rg</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;RG-AZ700&#39;</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="n">Location</span> <span class="p">=</span> <span class="s1">&#39;EastUS&#39;</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="6 "></span><span class="nb">New-AzResourceGroup</span> <span class="nv">@rg</span>
+</code></pre></div>
+<div class="admonition core">
+<p class="admonition-title">Criação das vNets</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">CoreServicesVnet</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c"># Crianção da vNet</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nv">$vnet</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;CoreServicesVnet&#39;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="n">ResourceGroupName</span> <span class="p">=</span> <span class="nv">$rg</span><span class="p">.</span><span class="n">Name</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="n">Location</span> <span class="p">=</span> <span class="s1">&#39;West US&#39;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.20.0.0/16&#39;</span>    
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="nv">$virtualNetwork</span> <span class="p">=</span> <span class="nb">New-AzVirtualNetwork</span> <span class="nv">@vnet</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="c"># Crianção das Subnets</span>
+<span class="linenos" data-linenos="11 "></span><span class="nv">$subnet1</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;GatewaySubnet&#39;</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="n">VirtualNetwork</span> <span class="p">=</span> <span class="nv">$virtualNetwork</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.20.0.0/27&#39;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="nv">$subnetConfig</span> <span class="p">=</span> <span class="nb">Add-AzVirtualNetworkSubnetConfig</span> <span class="nv">@subnet1</span>
+<span class="linenos" data-linenos="17 "></span><span class="nv">$subnet2</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;SharedServicesSubnet&#39;</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="n">VirtualNetwork</span> <span class="p">=</span> <span class="nv">$virtualNetwork</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.20.10.0/24&#39;</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span><span class="nv">$subnetConfig</span> <span class="p">=</span> <span class="nb">Add-AzVirtualNetworkSubnetConfig</span> <span class="nv">@subnet2</span>
+<span class="linenos" data-linenos="23 "></span><span class="nv">$subnet3</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;DatabaseSubnet&#39;</span>
+<span class="linenos" data-linenos="25 "></span>    <span class="n">VirtualNetwork</span> <span class="p">=</span> <span class="nv">$virtualNetwork</span>
+<span class="linenos" data-linenos="26 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.20.20.0/24&#39;</span>
+<span class="linenos" data-linenos="27 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="28 "></span><span class="nv">$subnetConfig</span> <span class="p">=</span> <span class="nb">Add-AzVirtualNetworkSubnetConfig</span> <span class="nv">@subnet3</span>
+<span class="linenos" data-linenos="29 "></span><span class="nv">$subnet4</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="30 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;PublicWebServiceSubnet&#39;</span>
+<span class="linenos" data-linenos="31 "></span>    <span class="n">VirtualNetwork</span> <span class="p">=</span> <span class="nv">$virtualNetwork</span>
+<span class="linenos" data-linenos="32 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.20.30.0/24&#39;</span>
+<span class="linenos" data-linenos="33 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="34 "></span><span class="nv">$subnetConfig</span> <span class="p">=</span> <span class="nb">Add-AzVirtualNetworkSubnetConfig</span> <span class="nv">@subnet4</span>
+<span class="linenos" data-linenos="35 "></span><span class="c"># Associar subnet a vNet</span>
+<span class="linenos" data-linenos="36 "></span><span class="nv">$virtualNetwork</span> <span class="p">|</span> <span class="nb">Set-AzVirtualNetwork</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Azure CLI</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>az group create --name &#39;RG-AZ700&#39; --location &#39;EastUS&#39;
-<span class="linenos" data-linenos="2 "></span>az network vnet create --name &#39;VNET-700&#39; --resource-group &#39;RG-AZ700&#39; --subnet-name &#39;SNET-700&#39;
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">ManufacturingVnet</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c"># Crianção da vNet</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nv">$vnet</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;ManufacturingVnet&#39;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="n">ResourceGroupName</span> <span class="p">=</span> <span class="nv">$rg</span><span class="p">.</span><span class="n">Name</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="n">Location</span> <span class="p">=</span> <span class="s1">&#39;North Europe&#39;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.30.0.0/16&#39;</span>    
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="nv">$virtualNetwork</span> <span class="p">=</span> <span class="nb">New-AzVirtualNetwork</span> <span class="nv">@vnet</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="c"># Crianção das Subnets</span>
+<span class="linenos" data-linenos="11 "></span><span class="nv">$subnet1</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;ManufacturingSystemSubnet&#39;</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="n">VirtualNetwork</span> <span class="p">=</span> <span class="nv">$virtualNetwork</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.30.10.0/24&#39;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="nv">$subnetConfig</span> <span class="p">=</span> <span class="nb">Add-AzVirtualNetworkSubnetConfig</span> <span class="nv">@subnet1</span>
+<span class="linenos" data-linenos="17 "></span><span class="nv">$subnet2</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;SensorSubnet1&#39;</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="n">VirtualNetwork</span> <span class="p">=</span> <span class="nv">$virtualNetwork</span>
+<span class="linenos" data-linenos="20 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.30.20.0/24&#39;</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="22 "></span><span class="nv">$subnetConfig</span> <span class="p">=</span> <span class="nb">Add-AzVirtualNetworkSubnetConfig</span> <span class="nv">@subnet2</span>
+<span class="linenos" data-linenos="23 "></span><span class="nv">$subnet3</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;SensorSubnet2&#39;</span>
+<span class="linenos" data-linenos="25 "></span>    <span class="n">VirtualNetwork</span> <span class="p">=</span> <span class="nv">$virtualNetwork</span>
+<span class="linenos" data-linenos="26 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.30.21.0/24&#39;</span>
+<span class="linenos" data-linenos="27 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="28 "></span><span class="nv">$subnetConfig</span> <span class="p">=</span> <span class="nb">Add-AzVirtualNetworkSubnetConfig</span> <span class="nv">@subnet3</span>
+<span class="linenos" data-linenos="29 "></span><span class="nv">$subnet4</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="30 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;SensorSubnet3&#39;</span>
+<span class="linenos" data-linenos="31 "></span>    <span class="n">VirtualNetwork</span> <span class="p">=</span> <span class="nv">$virtualNetwork</span>
+<span class="linenos" data-linenos="32 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.30.22.0/24&#39;</span>
+<span class="linenos" data-linenos="33 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="34 "></span><span class="nv">$subnetConfig</span> <span class="p">=</span> <span class="nb">Add-AzVirtualNetworkSubnetConfig</span> <span class="nv">@subnet4</span>
+<span class="linenos" data-linenos="35 "></span><span class="c"># Associar subnet a vNet</span>
+<span class="linenos" data-linenos="36 "></span><span class="nv">$virtualNetwork</span> <span class="p">|</span> <span class="nb">Set-AzVirtualNetwork</span>
 </code></pre></div>
 </div>
-</div>
-<h3 id="atualizar-vnet">Atualizar VNET</h3>
-<h3 id="remover-vnet">Remover VNET</h3>
-<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Powershell</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Remove-AzResourceGroup -Name &#39;RG-AZ700&#39; -Force
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">ResearchVnet</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c"># Crianção da vNet</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nv">$vnet</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;ResearchVnet&#39;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="n">ResourceGroupName</span> <span class="p">=</span> <span class="nv">$rg</span><span class="p">.</span><span class="n">Name</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="n">Location</span> <span class="p">=</span> <span class="s1">&#39;West India&#39;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.40.0.0/16&#39;</span>    
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="nv">$virtualNetwork</span> <span class="p">=</span> <span class="nb">New-AzVirtualNetwork</span> <span class="nv">@vnet</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="c"># Crianção das Subnets</span>
+<span class="linenos" data-linenos="11 "></span><span class="nv">$subnet1</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;ResearchSystemSubnet&#39;</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="n">VirtualNetwork</span> <span class="p">=</span> <span class="nv">$virtualNetwork</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="n">AddressPrefix</span> <span class="p">=</span> <span class="s1">&#39;10.40.0.0/24&#39;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="16 "></span><span class="nv">$subnetConfig</span> <span class="p">=</span> <span class="nb">Add-AzVirtualNetworkSubnetConfig</span> <span class="nv">@subnet1</span>
+<span class="linenos" data-linenos="17 "></span><span class="c"># Associar subnet a vNet</span>
+<span class="linenos" data-linenos="18 "></span><span class="nv">$virtualNetwork</span> <span class="p">|</span> <span class="nb">Set-AzVirtualNetwork</span>
 </code></pre></div>
 </div>
-<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Azure CLI</label><div class="tabbed-content">
-<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>az group delete --name &#39;RG-AZ700&#39; --yes
-</code></pre></div>
 </div>
 </div>
                 

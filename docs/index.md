@@ -37,19 +37,19 @@ locations
 * diagnose and resolve ExpressRoute connection issues
 ## Core Networking (20–25%)
 ### Design and implement private IP addressing for VNets
-* create a VNet
+* [x] create a VNet
 * plan and configure subnetting for services, including VNet gateways, private endpoints, 
 firewalls, application gateways, and VNet-integrated platform services
 * plan and configure subnet delegation
 ### Design and implement name resolution
-* design public DNS zones
-* design private DNS zones
-* design name resolution inside a VNet
-* configure a public or private DNS zone
-* link a private DNS zone to a VNetDesign and implement cross-VNet connectivity
+* [x] design public DNS zones
+* [x] design private DNS zones
+* [x] design name resolution inside a VNet
+* [x] configure a public or private DNS zone
+* [x] link a private DNS zone to a VNetDesign and implement cross-VNet connectivity
 * design service chaining, including gateway transit
 * design VPN connectivity between VNets
-* implement VNet peering
+* [x] implement VNet peering
 ### Design and implement an Azure Virtual WAN architecture
 * design an Azure Virtual WAN architecture, including selecting SKUs and services
 * connect a VNet gateway to Azure Virtual WAN

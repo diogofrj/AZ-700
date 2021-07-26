@@ -64,6 +64,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#task-1-create-a-private-dns-zone" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -646,6 +651,8 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+      
+        
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
@@ -1396,6 +1403,23 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -1406,15 +1430,67 @@
                   </a>
                 
                 
-                  <h1>Naming</h1>
-                
                 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> design public DNS zones</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> design private DNS zones</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> design name resolution inside a VNet</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> configure a public or private DNS zone</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> link a private DNS zone to a VNet</li>
+<li class="task-list-item">
+<p><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> link a private DNS zone to a VNet</p>
+</li>
+<li>
+<p>Task 1: Create a private DNS Zone</p>
+</li>
+<li>Task 2: Link subnet for auto registration</li>
+<li>Task 3: Create Virtual Machines to test the configuration</li>
+<li>Task 4: Verify records are present in the DNS zone</li>
 </ul>
+<h1 id="task-1-create-a-private-dns-zone">Task 1: Create a private DNS Zone</h1>
+<ol>
+<li>Go to <a href="https://portal.azure.com/">Azure Portal</a>.</li>
+<li>On the Azure home page, in the search bar, type dns, and then select <strong>Private DNS zones</strong>.</li>
+</ol>
+<p><img alt="image-20210723171828793" src="../../img/image-20210723171828793.png" /></p>
+<ol>
+<li>In Private DNS zones, select <strong>+ Create</strong>.</li>
+</ol>
+<p><img alt="image-20210723172142703" src="../../img/image-20210723172142703.png" /></p>
+<ol>
+<li>Wait until the deployment is complete, and then select <strong>Go to resource</strong>.</li>
+<li>Verify that the zone has been created.</li>
+</ol>
+<h1 id="task-2-link-subnet-for-auto-registration">Task 2: Link subnet for auto registration</h1>
+<ol>
+<li>In diogofernandes.net, under <strong>Settings</strong>, select <strong>Virtual network links</strong>.</li>
+<li>On diogofernandes.net    Virtual network links, select + Add.</li>
+</ol>
+<p><img alt="image-20210723175810100" src="../../img/image-20210723175810100.png" /></p>
+<p><img alt="image-20210723183057844" src="../../img/image-20210723183057844.png" /></p>
+<ol>
+<li>Select <strong>Refresh</strong>.</li>
+<li>Verify that the CoreServicesVnetLink has been created, and that auto-registration is enabled.</li>
+<li>Repeat steps 2 - 5 for the ManufacturingVnet, using the information in the following table:</li>
+</ol>
+<p><img alt="image-20210723183518993" src="../../img/image-20210723183518993.png" /></p>
+<p><img alt="image-20210723183918306" src="../../img/image-20210723183918306.png" /></p>
+<h1 id="task-3-create-virtual-machines-to-test-the-configuration">Task 3: Create Virtual Machines to test the configuration</h1>
+<p>In this section, you will create two test VMs to test the Private DNS zone configuration.</p>
+<p><img alt="image-20210723184445994" src="../../img/image-20210723184445994.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nv">$TAG_RG</span> <span class="p">=</span> <span class="nb">Get-AzResourceGroup</span> <span class="n">-Name</span> <span class="nv">$resourceGroupName</span> <span class="n">-ErrorVariable</span> <span class="n">notPresent</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$TAG_RG</span> <span class="o">-eq</span> <span class="nv">$null</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nb">Write-Host</span> <span class="n">-ForegroundColor</span> <span class="n">Green</span> <span class="s2">&quot;Tagging Resource Group of the.................................:&quot;</span> <span class="nv">$rgName</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nb">Update-AzTag</span> <span class="n">-Tag</span> <span class="nv">$tags_rg</span> <span class="n">-ResourceId</span> <span class="p">$((</span><span class="nb">Get-AzResourceGroup</span> <span class="n">-Name</span> <span class="nv">$rgName</span><span class="p">).</span><span class="n">ResourceId</span><span class="p">)</span> <span class="n">-Operation</span> <span class="nv">$OPERATION</span>  
+<span class="linenos" data-linenos=" 5 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="c"># Create RG if not Exist</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="nb">Write-Host</span> <span class="s2">&quot;Create Resource Group: $resourceGroupName&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">Cyan</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="nb">New-AzResourceGroup</span> <span class="n">-Name</span> <span class="nv">$resourceGroupName</span> <span class="n">-Location</span> <span class="nv">$region</span> <span class="n">-Tag</span> <span class="nv">$tags_rg</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="nv">$rg</span> <span class="p">=</span> <span class="p">@{</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;RG-AZ700&#39;</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="n">Location</span> <span class="p">=</span> <span class="s1">&#39;EastUS&#39;</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="14 "></span><span class="nb">New-AzResourceGroup</span> <span class="nv">@rg</span>
+</code></pre></div>
                 
                   
                     

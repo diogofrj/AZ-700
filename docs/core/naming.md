@@ -71,7 +71,28 @@ In this section, you will create two test VMs to test the Private DNS zone confi
 
 ![image-20210723184445994](../img/image-20210723184445994.png)
 
+### Create TestVM2
 
+1. On the Azure home page, select **Virtual Machines**.
+2. In Virtual Machines, select **+ Add > + Start with a preset configuration**.
+
+
+
+
+
+
+
+
+
+
+
+![image-20210723192321338](D:\git\az700\AZ-700\docs\img\image-20210723192321338.png)
+
+
+
+
+
+Congratulations! You have created a private DNS Zone, added a name resolution and auto-registration link, and tested name resolution in your configuration.
 
 
 
