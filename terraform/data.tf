@@ -21,4 +21,8 @@ data "azurerm_subnet" "Database" {
 output "virtual_database" {
   value = data.azurerm_subnet.Database.id
 }
+
+
+
+tdestroy --target=azurerm_virtual_machine.TestVM --target=azurerm_virtual_machine.TestVMOnprem --target=azurerm_public_ip.pipvmonprem --target=azurerm_public_ip.pipcore
 */

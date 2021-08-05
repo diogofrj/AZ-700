@@ -7,6 +7,12 @@ variable "node_count" {
   description = "Count Instances"
 }
 
+variable "region_onprem" {
+  default     = "eastus"
+  description = "Região Onpremises"
+}
+
+
 variable "region_core" {
   default     = "westus"
   description = "Região Core"
@@ -16,6 +22,6 @@ variable "region_fabric" {
   description = "Região Manufacture"
 }
 variable "region_research" {
-  default     = "northindia"
+  default     = "westindia"
   description = "Região Research"
 }
