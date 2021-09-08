@@ -26,3 +26,8 @@ terraform.tfstate
 /AZ-700/site/*
 /scripts/azcopy.sh
 /scripts/notes.txt
+terraform/.terraform.lock.hcl
+terraform/.terraform.lock.hcl
+Frank/.terraform.lock.hcl
+terraform/.terraform.lock.hcl
+terraform/.terraform.lock.hcl
