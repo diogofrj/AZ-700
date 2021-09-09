@@ -11,3 +11,8 @@ variable "rg_westus" { type = string }
 variable "loc_westus" { type = string }
 variable "rg_westus2" { type = string }
 variable "loc_westus2" { type = string }
+
+variable "onprem_vnet" {  type = string }
+variable "onprem_vnet_range" { type = list(string) }
+variable "onprem_snet" {  type = string }
+variable "onprem_snet_range" { type = list(string) }

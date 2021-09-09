@@ -1,5 +1,6 @@
 data "azurerm_client_config" "current" {}
 data "azurerm_subscription" "current" {}
+data "azuread_client_config" "current" {}
 
 // INFORMAÇÕES SOBRE A IMAGEM EXISTENTE NO AMBIENTE
 data "azurerm_image" "img-master" {
@@ -37,3 +38,6 @@ data "azurerm_storage_account" "stgcurso" {
 output "storage_id" {
   value = data.azurerm_storage_account.stgcurso.id
 }
+
+
+
